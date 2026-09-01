@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the visual world of EMBER & SAGE - signature dishes, restaurant interior, dining atmosphere, and culinary moments.">
+    <title>Gallery | EMBER & SAGE</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+    <style>
+        .gallery-hero {
+            position: relative;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background-color: var(--color-espresso);
+            overflow: hidden;
+        }
+        
+        .gallery-hero__bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.75;
+        }
+        
+        .gallery-hero__content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: var(--color-ivory);
+            width: 100%;
+        }
+        
+        .gallery-hero h1 {
+            color: var(--color-ivory);
+            margin-bottom: var(--space-4);
+        }
+        
+        .gallery-hero p {
+            color: var(--color-cream);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-4);
+            flex-wrap: wrap;
+            padding: var(--space-8) 0;
+            background-color: var(--color-cream);
+            position: sticky;
+            top: 70px;
+            z-index: var(--z-sticky);
+        }
+        
+        .gallery-filter-btn {
+            padding: var(--space-3) var(--space-6);
+            font-size: var(--text-sm);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--color-charcoal);
+            background-color: transparent;
+            border: 2px solid transparent;
+            border-radius: var(--radius-full);
+            transition: var(--transition-base);
+        }
+        
+        .gallery-filter-btn:hover,
+        .gallery-filter-btn.active {
+            color: var(--color-terracotta);
+            border-color: var(--color-terracotta);
+        }
+        
+        .gallery-masonry {
+            padding: var(--space-8) 0;
+        }
+        
+        .masonry-grid {
+            columns: 4;
+            column-gap: var(--space-4);
+        }
+        
+        .masonry-item {
+            break-inside: avoid;
+            margin-bottom: var(--space-4);
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            cursor: pointer;
+            transition: var(--transition-base);
+        }
+        
+        .masonry-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .masonry-item img {
+            width: 100%;
+            display: block;
+            transition: transform var(--transition-slow);
+        }
+        
+        .masonry-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .masonry-item__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to top,
+                rgba(30, 27, 25, 0.9) 0%,
+                transparent 60%
+            );
+            opacity: 0;
+            transition: var(--transition-base);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: var(--space-6);
+        }
+        
+        .masonry-item:hover .masonry-item__overlay {
+            opacity: 1;
+        }
+        
+        .masonry-item__title {
+            color: var(--color-white);
+            font-family: var(--font-heading);
+            font-size: var(--text-xl);
+            margin-bottom: var(--space-2);
+        }
+        
+        .masonry-item__category {
+            color: var(--color-terracotta);
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        
+        .gallery-lightbox {
+            position: fixed;
+            inset: 0;
+            background-color: rgba(0, 0, 0, 0.95);
+            z-index: var(--z-modal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-base);
+        }
+        
+        .gallery-lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .gallery-lightbox__close {
+            position: absolute;
+            top: var(--space-6);
+            right: var(--space-6);
+            width: 48px;
+            height: 48px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            transition: var(--transition-base);
+        }
+        
+        .gallery-lightbox__close:hover {
+            background-color: var(--color-terracotta);
+        }
+        
+        .gallery-lightbox__image {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: var(--radius-lg);
+        }
+        
+        .gallery-lightbox__nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-white);
+            transition: var(--transition-base);
+        }
+        
+        .gallery-lightbox__nav:hover {
+            background-color: var(--color-terracotta);
+        }
+        
+        .gallery-lightbox__nav--prev {
+            left: var(--space-6);
+        }
+        
+        .gallery-lightbox__nav--next {
+            right: var(--space-6);
+        }
+        
+        @media (max-width: 1024px) {
+            .masonry-grid {
+                columns: 3;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .masonry-grid {
+                columns: 2;
+            }
+            
+            .gallery-filters {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding: var(--space-4);
+                gap: var(--space-2);
+            }
+            
+            .gallery-filter-btn {
+                white-space: nowrap;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .masonry-grid {
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav__container">
+            <a href="index.html" class="nav__logo">EMBER <span>&</span> SAGE</a>
+            <ul class="nav__menu">
+                <li><a href="index.html" class="nav__link">Home</a></li>
+                <li><a href="menu.html" class="nav__link">Menu</a></li>
+                <li><a href="about.html" class="nav__link">About</a></li>
+                <li><a href="gallery.html" class="nav__link active">Gallery</a></li>
+                <li><a href="contact.html" class="nav__link">Contact</a></li>
+                <li class="nav__cta"><a href="reservations.html" class="btn btn--primary">Reserve a Table</a></li>
+            </ul>
+            <button class="nav__toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Gallery Hero -->
+    <section class="gallery-hero">
+        <img src="images/hero-banner-about.jpg" alt="EMBER & SAGE restaurant ambiance" class="gallery-hero__bg">
+        <div class="hero__overlay"></div>
+        <div class="container gallery-hero__content">
+            <h1>Gallery</h1>
+            <p>A visual journey through the world of EMBER & SAGE - our dishes, our space, and our passion.</p>
+        </div>
+    </section>
+
+    <!-- Gallery Filters -->
+    <div class="gallery-filters">
+        <button class="gallery-filter-btn active" data-filter="all">All</button>
+        <button class="gallery-filter-btn" data-filter="dishes">Signature Dishes</button>
+        <button class="gallery-filter-btn" data-filter="interior">Interior</button>
+        <button class="gallery-filter-btn" data-filter="atmosphere">Atmosphere</button>
+        <button class="gallery-filter-btn" data-filter="ingredients">Ingredients</button>
+        <button class="gallery-filter-btn" data-filter="chef">Chef & Kitchen</button>
+    </div>
+
+    <!-- Gallery Masonry -->
+    <section class="gallery-masonry">
+        <div class="container">
+            <div class="masonry-grid">
+                <!-- Dishes -->
+                <div class="masonry-item fade-in" data-category="dishes">
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&q=80" alt="Signature salad">
+                    <div class="masonry-item__overlay">
+                        <h3 class="masonry-item__title">Harvest Bowl</h3>
+                        <p class="masonry-item__category">Signature Dish</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item fade-in" data-category="interior">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80" alt="Main dining room">
+                    <div class="masonry-item__overlay">
+                        <h3 class="masonry-item__title">Main Dining Room</h3>
+                        <p class="masonry-item__category">Interior</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item fade-in" data-category="chef">
+                    <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=600&q=80" alt="Chef at work">
+                    <div class="masonry-item__overlay">
+                        <h3 class="masonry-item__title">Chef Marcus</h3>
+                        <p class="masonry-item__category">Chef & Kitchen</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item fade-in" data-category="dishes">
+                    <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" alt="Grilled salmon">
+                    <div class="masonry-item__overlay">
+                        <h3 class="masonry-item__title">Ocean Kissed Salmon</h3>
+                        <p class="masonry-item__category">Signature Dish</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item fade-in" data-category="ingredients">
+                    <img src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=600&q=80" alt="Fresh herbs">
+                    <div class="masonry-item__overlay">
+                        <h3 class="masonry-item__title">Fresh Herbs</h3>
+                        <p class="masonry-item__category">Ingredients</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item fade-in" data-category="atmosphere">
+                    <img src="https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=600&q=80" alt="Sparkling wine pour">
+                    <div class="masonry-item__overlay">
+                        <h3 class="masonry-item__title">Wine Collection</h3>
+                        <p class="masonry-item__category">Atmosphere</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item fade-in" data-category="dishes">
+                    <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=600&q=80" alt="Wagyu beef">
+                    <div class="masonry-item__overlay">
+                        <h3 class="masonry-item__title">Ember-Kissed Wagyu</h3>
+                        <p class="masonry-item__category">Signature Dish</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item fade-in" data-category="interior">
+                    <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=600&q=80" alt="Garden terrace">
+                    <div class="masonry-item__overlay">
+                        <h3 class="masonry-item__title">Garden Terrace</h3>
+                        <p class="masonry-item__category">Interior</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item fade-in" data-category="chef">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" alt="Kitchen action">
+                    <div class="masonry-item__overlay">
+                        <h3 class="masonry-item__title">Kitchen Action</h3>
+                        <p class="masonry-item__category">Chef & Kitchen</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item fade-in" data-category="dishes">
+                    <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=600&q=80" alt="Chocolate dessert">
+                    <div class="masonry-item__overlay">
+                        <h3 class="masonry-item__title">Dark Chocolate Fondant</h3>
+                        <p class="masonry-item__category">Signature Dish</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item fade-in" data-category="atmosphere">
+                    <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80" alt="Craft cocktails">
+                    <div class="masonry-item__overlay">
+                        <h3 class="masonry-item__title">Craft Cocktails</h3>
+                        <p class="masonry-item__category">Atmosphere</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item fade-in" data-category="ingredients">
+                    <img src="https://images.unsplash.com/photo-1490818387583-1baba5e638af?w=600&q=80" alt="Fresh produce">
+                    <div class="masonry-item__overlay">
+                        <h3 class="masonry-item__title">Seasonal Produce</h3>
+                        <p class="masonry-item__category">Ingredients</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item fade-in" data-category="dishes">
+                    <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80" alt="Colorful dish">
+                    <div class="masonry-item__overlay">
+                        <h3 class="masonry-item__title">Garden Harvest</h3>
+                        <p class="masonry-item__category">Signature Dish</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item fade-in" data-category="interior">
+                    <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&q=80" alt="Bar area">
+                    <div class="masonry-item__overlay">
+                        <h3 class="masonry-item__title">The Bar</h3>
+                        <p class="masonry-item__category">Interior</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item fade-in" data-category="chef">
+                    <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&q=80" alt="Plating dish">
+                    <div class="masonry-item__overlay">
+                        <h3 class="masonry-item__title">The Art of Plating</h3>
+                        <p class="masonry-item__category">Chef & Kitchen</p>
+                    </div>
+                </div>
+                
+                <div class="masonry-item fade-in" data-category="atmosphere">
+                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&q=80" alt="Warm bar ambiance">
+                    <div class="masonry-item__overlay">
+                        <h3 class="masonry-item__title">Evening Ambiance</h3>
+                        <p class="masonry-item__category">Atmosphere</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <img src="images/hero-banner.webp" alt="EMBER & SAGE restaurant background" class="cta-section__bg">
+        <div class="container cta-section__content">
+            <h2 class="fade-in">Experience It in Person</h2>
+            <p class="fade-in">See these moments come to life at EMBER & SAGE. Your table awaits.</p>
+            <a href="reservations.html" class="btn btn--primary btn--lg fade-in">Reserve a Table</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <p class="footer__logo">EMBER <span>&</span> SAGE</p>
+                    <p class="footer__description">A contemporary restaurant focused on beautifully presented food, warm hospitality, and a refined dining experience.</p>
+                    <div class="footer__social">
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer__title">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="reservations.html">Reservations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Hours</h4>
+                    <div class="footer__hours">
+                        <p><strong>Mon - Thu:</strong> 5:00 PM - 10:00 PM</p>
+                        <p><strong>Fri - Sat:</strong> 5:00 PM - 11:00 PM</p>
+                        <p><strong>Sunday:</strong> 10:00 AM - 9:00 PM</p>
+                        <p style="margin-top: var(--space-4);"><strong>Brunch:</strong></p>
+                        <p>Sat & Sun: 10:00 AM - 2:00 PM</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer__title">Contact</h4>
+                    <div class="footer__hours">
+                        <p>127 Ember Lane</p>
+                        <p>Portland, OR 97201</p>
+                        <p style="margin-top: var(--space-4);">(503) 555-0142</p>
+                        <p>hello@emberandsage.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2026 EMBER & SAGE. All rights reserved.</p>
+                <div class="footer__bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="gallery-lightbox" id="lightbox">
+        <button class="gallery-lightbox__close" aria-label="Close lightbox">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </button>
+        <button class="gallery-lightbox__nav gallery-lightbox__nav--prev" aria-label="Previous image">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6"/>
+            </svg>
+        </button>
+        <img src="" alt="" class="gallery-lightbox__image" id="lightbox-image">
+        <button class="gallery-lightbox__nav gallery-lightbox__nav--next" aria-label="Next image">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+            </svg>
+        </button>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Gallery Filter
+        const filterButtons = document.querySelectorAll('.gallery-filter-btn');
+        const galleryItems = document.querySelectorAll('.masonry-item');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const filter = button.dataset.filter;
+                
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                galleryItems.forEach(item => {
+                    const category = item.dataset.category;
+                    
+                    if (filter === 'all' || category === filter) {
+                        item.style.display = 'block';
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 50);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+        
+        // Lightbox
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxClose = document.querySelector('.gallery-lightbox__close');
+        const lightboxPrev = document.querySelector('.gallery-lightbox__nav--prev');
+        const lightboxNext = document.querySelector('.gallery-lightbox__nav--next');
+        let currentImageIndex = 0;
+        let visibleImages = [];
+        
+        function updateVisibleImages() {
+            visibleImages = Array.from(galleryItems).filter(item => 
+                item.style.display !== 'none'
+            );
+        }
+        
+        function openLightbox(index) {
+            updateVisibleImages();
+            currentImageIndex = index;
+            const img = visibleImages[currentImageIndex].querySelector('img');
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        function navigateLightbox(direction) {
+            updateVisibleImages();
+            currentImageIndex = (currentImageIndex + direction + visibleImages.length) % visibleImages.length;
+            const img = visibleImages[currentImageIndex].querySelector('img');
+            lightboxImage.src = img.src;
+            lightboxImage.alt = img.alt;
+        }
+        
+        galleryItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                updateVisibleImages();
+                const visibleIndex = visibleImages.indexOf(item);
+                openLightbox(visibleIndex);
+            });
+        });
+        
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightboxPrev.addEventListener('click', () => navigateLightbox(-1));
+        lightboxNext.addEventListener('click', () => navigateLightbox(1));
+        
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+        
+        document.addEventListener('keydown', (e) => {
+            if (!lightbox.classList.contains('active')) return;
+            
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+    </script>
+</body>
+</html>

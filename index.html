@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="EMBER & SAGE - A contemporary restaurant focused on beautifully presented food, warm hospitality, and a refined dining experience.">
+    <title>EMBER & SAGE | Where Fire Meets Flavor</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav__container">
+            <a href="index.html" class="nav__logo">EMBER <span>&</span> SAGE</a>
+            <ul class="nav__menu">
+                <li><a href="index.html" class="nav__link active">Home</a></li>
+                <li><a href="menu.html" class="nav__link">Menu</a></li>
+                <li><a href="about.html" class="nav__link">About</a></li>
+                <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+                <li><a href="contact.html" class="nav__link">Contact</a></li>
+                <li class="nav__cta"><a href="reservations.html" class="btn btn--primary">Reserve a Table</a></li>
+            </ul>
+            <button class="nav__toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="images/hero-banner.webp" alt="EMBER & SAGE restaurant ambiance" class="hero__bg">
+        <div class="hero__overlay"></div>
+        <div class="container hero__content">
+            <p class="hero__subtitle">Contemporary Dining</p>
+            <h1 class="hero__title">Where Fire Meets Flavor</h1>
+            <p class="hero__description">Experience the art of refined cuisine at EMBER & SAGE. Every dish tells a story of passion, precision, and the finest ingredients.</p>
+            <div class="hero__buttons">
+                <a href="menu.html" class="btn btn--primary btn--lg">Explore Menu</a>
+                <a href="reservations.html" class="btn btn--secondary btn--lg">Reserve a Table</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Dishes Carousel -->
+    <section class="carousel">
+        <div class="container">
+            <div class="carousel__header">
+                <h2 class="carousel__title">Signature Creations</h2>
+                <p class="carousel__subtitle">Discover our chef's most celebrated dishes, each crafted with meticulous attention to detail and the finest seasonal ingredients.</p>
+            </div>
+            <div class="carousel__container">
+                <button class="carousel__nav carousel__nav--prev" aria-label="Previous slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <div class="carousel__track">
+                    <!-- Slide 1 -->
+                    <div class="carousel__slide">
+                        <div class="carousel__card">
+                            <div class="carousel__image">
+                                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&q=80" alt="Seared Duck Breast">
+                            </div>
+                            <div class="carousel__content">
+                                <span class="carousel__category">Chef's Special</span>
+                                <h3 class="carousel__dish-name">Seared Duck Breast</h3>
+                                <p class="carousel__description">Pan-seared duck breast with a honey-thyme glaze, served alongside roasted root vegetables and a rich port wine reduction.</p>
+                                <p class="carousel__price">$42</p>
+                                <a href="menu.html" class="btn btn--outline">View Menu</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="carousel__slide">
+                        <div class="carousel__card">
+                            <div class="carousel__image">
+                                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=800&q=80" alt="Grilled Salmon">
+                            </div>
+                            <div class="carousel__content">
+                                <span class="carousel__category">Seafood</span>
+                                <h3 class="carousel__dish-name">Ocean Kissed Salmon</h3>
+                                <p class="carousel__description">Wild-caught salmon grilled to perfection, complemented by a citrus beurre blanc, asparagus tips, and herb-infused quinoa.</p>
+                                <p class="carousel__price">$38</p>
+                                <a href="menu.html" class="btn btn--outline">View Menu</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="carousel__slide">
+                        <div class="carousel__card">
+                            <div class="carousel__image">
+                                <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&q=80" alt="Wagyu Beef">
+                            </div>
+                            <div class="carousel__content">
+                                <span class="carousel__category">Signature</span>
+                                <h3 class="carousel__dish-name">Ember-Kissed Wagyu</h3>
+                                <p class="carousel__description">A5 Wagyu beef cooked over open flames, finished with truffle butter, accompanied by potato mousseline and seasonal greens.</p>
+                                <p class="carousel__price">$68</p>
+                                <a href="menu.html" class="btn btn--outline">View Menu</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="carousel__slide">
+                        <div class="carousel__card">
+                            <div class="carousel__image">
+                                <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=800&q=80" alt="Chocolate Dessert">
+                            </div>
+                            <div class="carousel__content">
+                                <span class="carousel__category">Dessert</span>
+                                <h3 class="carousel__dish-name">Dark Chocolate Fondant</h3>
+                                <p class="carousel__description">Rich Valrhona chocolate fondant with a molten center, served with vanilla bean ice cream and a berry coulis.</p>
+                                <p class="carousel__price">$18</p>
+                                <a href="menu.html" class="btn btn--outline">View Menu</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel__nav carousel__nav--next" aria-label="Next slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="carousel__dots">
+                <button class="carousel__dot active" aria-label="Go to slide 1"></button>
+                <button class="carousel__dot" aria-label="Go to slide 2"></button>
+                <button class="carousel__dot" aria-label="Go to slide 3"></button>
+                <button class="carousel__dot" aria-label="Go to slide 4"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Story Section -->
+    <section class="section">
+        <div class="container">
+            <div class="story">
+                <div class="story__image fade-in">
+                    <img src="images/hero-banner.webp" alt="EMBER & SAGE restaurant interior">
+                </div>
+                <div class="story__content fade-in">
+                    <span class="story__label">Our Story</span>
+                    <h2 class="story__title">A Passion for Culinary Excellence</h2>
+                    <p class="story__text">Founded in 2018, EMBER & SAGE was born from a simple yet profound belief: that dining should be an experience that engages all the senses. Our name reflects the dual elements that define our cooking—the primal warmth of fire and the refined elegance of fresh herbs.</p>
+                    <p class="story__text">Every dish we create honors traditional techniques while embracing modern innovation. We source our ingredients from local farmers and artisans who share our commitment to quality and sustainability.</p>
+                    <a href="about.html" class="btn btn--primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chef's Philosophy -->
+    <section class="section section--dark">
+        <div class="container">
+            <div class="story" style="direction: rtl;">
+                <div class="story__image fade-in" style="direction: ltr;">
+                    <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?w=800&q=80" alt="Chef Marcus">
+                </div>
+                <div class="story__content fade-in" style="direction: ltr;">
+                    <span class="story__label">Chef's Philosophy</span>
+                    <h2 class="story__title">Meet Chef Marcus Bellini</h2>
+                    <p class="story__text">With over two decades of experience in Michelin-starred kitchens across Europe and North America, Chef Marcus brings a unique perspective to modern cuisine. His philosophy is simple: respect the ingredient, understand the technique, and always cook with heart.</p>
+                    <p class="story__text">"Food is a universal language. At EMBER & SAGE, we speak it with passion, precision, and a deep respect for both tradition and innovation."</p>
+                    <a href="about.html" class="btn btn--secondary">Read Full Story</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Preview -->
+    <section class="section section--cream">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: var(--space-12);">
+                <h2 class="fade-in">Experience the Atmosphere</h2>
+                <p class="fade-in" style="max-width: 600px; margin: var(--space-4) auto 0;">Step inside EMBER & SAGE and discover a space designed for memorable moments.</p>
+            </div>
+            <div class="gallery-grid fade-in">
+                <div class="gallery-grid__item">
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Restaurant interior">
+                    <div class="gallery-grid__overlay">
+                        <span class="gallery-grid__caption">Main Dining Room</span>
+                    </div>
+                </div>
+                <div class="gallery-grid__item">
+                    <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" alt="Chef preparing food">
+                    <div class="gallery-grid__overlay">
+                        <span class="gallery-grid__caption">Open Kitchen</span>
+                    </div>
+                </div>
+                <div class="gallery-grid__item">
+                    <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb51f3a?w=600&q=80" alt="Wine selection">
+                    <div class="gallery-grid__overlay">
+                        <span class="gallery-grid__caption">Wine Cellar</span>
+                    </div>
+                </div>
+                <div class="gallery-grid__item">
+                    <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=800&q=80" alt="Outdoor seating">
+                    <div class="gallery-grid__overlay">
+                        <span class="gallery-grid__caption">Garden Terrace</span>
+                    </div>
+                </div>
+                <div class="gallery-grid__item">
+                    <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80" alt="Cocktail">
+                    <div class="gallery-grid__overlay">
+                        <span class="gallery-grid__caption">Craft Cocktails</span>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: var(--space-8);">
+                <a href="gallery.html" class="btn btn--outline fade-in">View Full Gallery</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="section">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: var(--space-12);">
+                <h2 class="fade-in">Menu Highlights</h2>
+                <p class="fade-in" style="max-width: 600px; margin: var(--space-4) auto 0;">Explore our carefully curated categories, each offering a unique culinary journey.</p>
+            </div>
+            <div class="grid grid-3">
+                <div class="philosophy__item fade-in">
+                    <div class="philosophy__icon">🥗</div>
+                    <h4 class="philosophy__title">Starters & Salads</h4>
+                    <p class="philosophy__text">Fresh, vibrant beginnings to awaken your palate with seasonal ingredients and creative presentations.</p>
+                    <a href="menu.html" class="btn btn--outline btn--sm" style="margin-top: var(--space-4);">Explore</a>
+                </div>
+                <div class="philosophy__item fade-in">
+                    <div class="philosophy__icon">🥩</div>
+                    <h4 class="philosophy__title">Main Courses</h4>
+                    <p class="philosophy__text">Expertly crafted entrées showcasing the finest proteins and produce, cooked with precision and passion.</p>
+                    <a href="menu.html" class="btn btn--outline btn--sm" style="margin-top: var(--space-4);">Explore</a>
+                </div>
+                <div class="philosophy__item fade-in">
+                    <div class="philosophy__icon">🍰</div>
+                    <h4 class="philosophy__title">Desserts</h4>
+                    <p class="philosophy__text">Sweet finales that combine artistry with indulgence, crafted by our talented pastry team.</p>
+                    <a href="menu.html" class="btn btn--outline btn--sm" style="margin-top: var(--space-4);">Explore</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section section--cream">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: var(--space-12);">
+                <h2 class="fade-in">What Our Guests Say</h2>
+                <p class="fade-in" style="max-width: 600px; margin: var(--space-4) auto 0;">Don't just take our word for it—hear from those who have experienced EMBER & SAGE.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-card__stars">★★★★★</div>
+                    <p class="testimonial-card__text">"An absolutely extraordinary dining experience. The Wagyu was cooked to perfection, and the service was impeccable. EMBER & SAGE has become our go-to for special occasions."</p>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar">SC</div>
+                        <div>
+                            <p class="testimonial-card__name">Sarah Chen</p>
+                            <p class="testimonial-card__date">August 2026</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-card__stars">★★★★★</div>
+                    <p class="testimonial-card__text">"From the moment we walked in, we were transported. The ambiance is stunning, the cocktail menu is innovative, and every dish was a work of art. Truly memorable."</p>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar">MR</div>
+                        <div>
+                            <p class="testimonial-card__name">Michael Rodriguez</p>
+                            <p class="testimonial-card__date">July 2026</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="testimonial-card__stars">★★★★★</div>
+                    <p class="testimonial-card__text">"Chef Marcus and his team have created something truly special here. The tasting menu was a journey through flavors I never knew existed. Can't wait to return."</p>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar">EP</div>
+                        <div>
+                            <p class="testimonial-card__name">Emily Patel</p>
+                            <p class="testimonial-card__date">June 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <img src="images/hero-banner.webp" alt="EMBER & SAGE restaurant background" class="cta-section__bg">
+        <div class="container cta-section__content">
+            <h2 class="fade-in">Ready for an Unforgettable Experience?</h2>
+            <p class="fade-in">Join us at EMBER & SAGE and discover why our guests return again and again. Reserve your table today.</p>
+            <a href="reservations.html" class="btn btn--primary btn--lg fade-in">Reserve a Table</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <p class="footer__logo">EMBER <span>&</span> SAGE</p>
+                    <p class="footer__description">A contemporary restaurant focused on beautifully presented food, warm hospitality, and a refined dining experience.</p>
+                    <div class="footer__social">
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer__title">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="reservations.html">Reservations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Hours</h4>
+                    <div class="footer__hours">
+                        <p><strong>Mon - Thu:</strong> 5:00 PM - 10:00 PM</p>
+                        <p><strong>Fri - Sat:</strong> 5:00 PM - 11:00 PM</p>
+                        <p><strong>Sunday:</strong> 10:00 AM - 9:00 PM</p>
+                        <p style="margin-top: var(--space-4);"><strong>Brunch:</strong></p>
+                        <p>Sat & Sun: 10:00 AM - 2:00 PM</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer__title">Contact</h4>
+                    <div class="footer__hours">
+                        <p>127 Ember Lane</p>
+                        <p>Portland, OR 97201</p>
+                        <p style="margin-top: var(--space-4);">(503) 555-0142</p>
+                        <p>hello@emberandsage.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2026 EMBER & SAGE. All rights reserved.</p>
+                <div class="footer__bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

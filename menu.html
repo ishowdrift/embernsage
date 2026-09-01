@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the EMBER & SAGE menu - from starters to desserts, discover our carefully crafted dishes using the finest seasonal ingredients.">
+    <title>Menu | EMBER & SAGE</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav__container">
+            <a href="index.html" class="nav__logo">EMBER <span>&</span> SAGE</a>
+            <ul class="nav__menu">
+                <li><a href="index.html" class="nav__link">Home</a></li>
+                <li><a href="menu.html" class="nav__link active">Menu</a></li>
+                <li><a href="about.html" class="nav__link">About</a></li>
+                <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+                <li><a href="contact.html" class="nav__link">Contact</a></li>
+                <li class="nav__cta"><a href="reservations.html" class="btn btn--primary">Reserve a Table</a></li>
+            </ul>
+            <button class="nav__toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Menu Hero -->
+    <section class="menu-hero">
+        <img src="images/hero-banner-about.jpg" alt="EMBER & SAGE menu dishes" class="menu-hero__bg">
+        <div class="hero__overlay"></div>
+        <div class="container menu-hero__content" style="position:relative;z-index:1;">
+            <h1>Our Menu</h1>
+            <p>Discover our carefully curated selection of dishes, each crafted with precision and passion using the finest seasonal ingredients.</p>
+        </div>
+    </section>
+
+    <!-- Menu Categories -->
+    <div class="menu-categories">
+        <button class="menu-category-btn active" data-category="all">All</button>
+        <button class="menu-category-btn" data-category="starters">Starters</button>
+        <button class="menu-category-btn" data-category="soups-salads">Soups & Salads</button>
+        <button class="menu-category-btn" data-category="mains">Main Courses</button>
+        <button class="menu-category-btn" data-category="specials">Chef's Specials</button>
+        <button class="menu-category-btn" data-category="desserts">Desserts</button>
+        <button class="menu-category-btn" data-category="drinks">Drinks</button>
+    </div>
+
+    <!-- Menu Content -->
+    <main class="section">
+        <div class="container">
+            <!-- Starters -->
+            <div class="menu-section" id="starters">
+                <h2 class="menu-section__title">Starters</h2>
+                <div class="menu-items">
+                    <div class="menu-item fade-in" data-category="starters">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Crispy Calamari</h3>
+                                <span class="menu-item__price">$16</span>
+                            </div>
+                            <p class="menu-item__description">Lightly battered squid served with roasted garlic aioli and charred lemon.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">Shareable</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=300&q=80" alt="Crispy Calamari">
+                        </div>
+                    </div>
+
+                    <div class="menu-item fade-in" data-category="starters">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Tuna Tartare</h3>
+                                <span class="menu-item__price">$19</span>
+                            </div>
+                            <p class="menu-item__description">Fresh ahi tuna with avocado, sesame ginger dressing, and wonton crisps.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">Gluten-Free Option</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=300&q=80" alt="Tuna Tartare">
+                        </div>
+                    </div>
+
+                    <div class="menu-item fade-in" data-category="starters">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Burrata Caprese</h3>
+                                <span class="menu-item__price">$17</span>
+                            </div>
+                            <p class="menu-item__description">Creamy burrata with heirloom tomatoes, fresh basil, and aged balsamic.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">Vegetarian</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1608897013039-882f232384f1?w=300&q=80" alt="Burrata Caprese">
+                        </div>
+                    </div>
+
+                    <div class="menu-item fade-in" data-category="starters">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Ember-Roasted Bone Marrow</h3>
+                                <span class="menu-item__price">$22</span>
+                            </div>
+                            <p class="menu-item__description">Slow-roasted bone marrow with herb gremolata and grilled sourdough.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">Signature</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=300&q=80" alt="Bone Marrow">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Soups & Salads -->
+            <div class="menu-section" id="soups-salads">
+                <h2 class="menu-section__title">Soups & Salads</h2>
+                <div class="menu-items">
+                    <div class="menu-item fade-in" data-category="soups-salads">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Roasted Tomato Bisque</h3>
+                                <span class="menu-item__price">$14</span>
+                            </div>
+                            <p class="menu-item__description">Velvety roasted tomato soup with crème fraîche and fresh basil oil.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">Vegetarian</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1547592166-23ac45744acd?w=300&q=80" alt="Tomato Bisque">
+                        </div>
+                    </div>
+
+                    <div class="menu-item fade-in" data-category="soups-salads">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Harvest Bowl</h3>
+                                <span class="menu-item__price">$18</span>
+                            </div>
+                            <p class="menu-item__description">Seasonal greens with roasted butternut squash, candied pecans, and apple cider vinaigrette.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">Vegan</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=300&q=80" alt="Harvest Bowl">
+                        </div>
+                    </div>
+
+                    <div class="menu-item fade-in" data-category="soups-salads">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Caesar Classique</h3>
+                                <span class="menu-item__price">$16</span>
+                            </div>
+                            <p class="menu-item__description">Crisp romaine, house-made croutons, Parmigiano-Reggiano, and classic Caesar dressing.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">Add Chicken +$6</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1550304943-4f24f54ddde9?w=300&q=80" alt="Caesar Salad">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Courses -->
+            <div class="menu-section" id="mains">
+                <h2 class="menu-section__title">Main Courses</h2>
+                <div class="menu-items">
+                    <div class="menu-item fade-in" data-category="mains">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Pan-Seared Duck Breast</h3>
+                                <span class="menu-item__price">$42</span>
+                            </div>
+                            <p class="menu-item__description">Honey-thyme glazed duck with roasted root vegetables and port wine reduction.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">Signature</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=300&q=80" alt="Duck Breast">
+                        </div>
+                    </div>
+
+                    <div class="menu-item fade-in" data-category="mains">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Ocean Kissed Salmon</h3>
+                                <span class="menu-item__price">$38</span>
+                            </div>
+                            <p class="menu-item__description">Wild-caught salmon with citrus beurre blanc, asparagus, and herb quinoa.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">Gluten-Free</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=300&q=80" alt="Salmon">
+                        </div>
+                    </div>
+
+                    <div class="menu-item fade-in" data-category="mains">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Filet Mignon</h3>
+                                <span class="menu-item__price">$56</span>
+                            </div>
+                            <p class="menu-item__description">8oz center-cut filet with truffle mashed potatoes and sautéed spinach.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">Premium</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=300&q=80" alt="Filet Mignon">
+                        </div>
+                    </div>
+
+                    <div class="menu-item fade-in" data-category="mains">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Mushroom Risotto</h3>
+                                <span class="menu-item__price">$32</span>
+                            </div>
+                            <p class="menu-item__description">Creamy Arborio rice with wild mushrooms, truffle oil, and aged Parmesan.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">Vegetarian</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=300&q=80" alt="Risotto">
+                        </div>
+                    </div>
+
+                    <div class="menu-item fade-in" data-category="mains">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Grilled Lamb Rack</h3>
+                                <span class="menu-item__price">$52</span>
+                            </div>
+                            <p class="menu-item__description">Herb-crusted lamb with rosemary jus, roasted potatoes, and grilled asparagus.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">Chef's Choice</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=300&q=80" alt="Lamb Rack">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chef's Specials -->
+            <div class="menu-section" id="specials">
+                <h2 class="menu-section__title">Chef's Specials</h2>
+                <div class="menu-items">
+                    <div class="menu-item fade-in" data-category="specials">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Ember-Kissed Wagyu</h3>
+                                <span class="menu-item__price">$68</span>
+                            </div>
+                            <p class="menu-item__description">A5 Wagyu beef cooked over open flames with truffle butter, potato mousseline, and seasonal greens.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">Signature</span>
+                                <span class="menu-item__tag">Limited</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=300&q=80" alt="Wagyu">
+                        </div>
+                    </div>
+
+                    <div class="menu-item fade-in" data-category="specials">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Lobster Thermidor</h3>
+                                <span class="menu-item__price">$62</span>
+                            </div>
+                            <p class="menu-item__description">Whole Maine lobster in a creamy mustard sauce, gratinéed with Gruyère and served with drawn butter.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">Classic</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?w=300&q=80" alt="Lobster">
+                        </div>
+                    </div>
+
+                    <div class="menu-item fade-in" data-category="specials">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Truffle Tasting Menu</h3>
+                                <span class="menu-item__price">$95</span>
+                            </div>
+                            <p class="menu-item__description">Five-course journey featuring black and white truffles from around the world. Wine pairing available.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">5 Courses</span>
+                                <span class="menu-item__tag">Wine Pairing +$45</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=300&q=80" alt="Tasting Menu">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts -->
+            <div class="menu-section" id="desserts">
+                <h2 class="menu-section__title">Desserts</h2>
+                <div class="menu-items">
+                    <div class="menu-item fade-in" data-category="desserts">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Dark Chocolate Fondant</h3>
+                                <span class="menu-item__price">$18</span>
+                            </div>
+                            <p class="menu-item__description">Rich Valrhona chocolate with a molten center, vanilla bean ice cream, and berry coulis.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">Signature</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=300&q=80" alt="Chocolate Fondant">
+                        </div>
+                    </div>
+
+                    <div class="menu-item fade-in" data-category="desserts">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Crème Brûlée</h3>
+                                <span class="menu-item__price">$14</span>
+                            </div>
+                            <p class="menu-item__description">Classic vanilla bean custard with a caramelized sugar crust and fresh berries.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">Gluten-Free</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1470124182917-cc6e71b22ecc?w=300&q=80" alt="Crème Brûlée">
+                        </div>
+                    </div>
+
+                    <div class="menu-item fade-in" data-category="desserts">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Lemon Tart</h3>
+                                <span class="menu-item__price">$15</span>
+                            </div>
+                            <p class="menu-item__description">Tangy lemon curd in a buttery pastry shell with Italian meringue and candied zest.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">Refreshing</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=300&q=80" alt="Lemon Tart">
+                        </div>
+                    </div>
+
+                    <div class="menu-item fade-in" data-category="desserts">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Artisan Cheese Board</h3>
+                                <span class="menu-item__price">$24</span>
+                            </div>
+                            <p class="menu-item__description">Selection of five artisanal cheeses with honeycomb, fig compote, and house-made crackers.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">Shareable</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1452195100486-9cc805987862?w=300&q=80" alt="Cheese Board">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Drinks -->
+            <div class="menu-section" id="drinks">
+                <h2 class="menu-section__title">Drinks</h2>
+                <div class="menu-items">
+                    <div class="menu-item fade-in" data-category="drinks">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Ember Old Fashioned</h3>
+                                <span class="menu-item__price">$16</span>
+                            </div>
+                            <p class="menu-item__description">Bourbon, smoked maple syrup, Angostura bitters, and a flamed orange peel.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">Signature Cocktail</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=300&q=80" alt="Old Fashioned">
+                        </div>
+                    </div>
+
+                    <div class="menu-item fade-in" data-category="drinks">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Sage Garden Gimlet</h3>
+                                <span class="menu-item__price">$15</span>
+                            </div>
+                            <p class="menu-item__description">Gin, fresh lime, cucumber, and house-made sage simple syrup.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">Refreshing</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=300&q=80" alt="Gimlet">
+                        </div>
+                    </div>
+
+                    <div class="menu-item fade-in" data-category="drinks">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Wine Selection</h3>
+                                <span class="menu-item__price">$14-28</span>
+                            </div>
+                            <p class="menu-item__description">Curated list of Old and New World wines. Ask your server for our sommelier's recommendations.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">By Glass or Bottle</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=300&q=80" alt="Wine">
+                        </div>
+                    </div>
+
+                    <div class="menu-item fade-in" data-category="drinks">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Craft Beer</h3>
+                                <span class="menu-item__price">$9-12</span>
+                            </div>
+                            <p class="menu-item__description">Rotating selection of local craft beers on tap and in bottles.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">Local Breweries</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=300&q=80" alt="Craft Beer">
+                        </div>
+                    </div>
+
+                    <div class="menu-item fade-in" data-category="drinks">
+                        <div class="menu-item__content">
+                            <div class="menu-item__header">
+                                <h3 class="menu-item__name">Non-Alcoholic</h3>
+                                <span class="menu-item__price">$6-8</span>
+                            </div>
+                            <p class="menu-item__description">House-made sodas, fresh juices, and artisanal mocktails.</p>
+                            <div class="menu-item__tags">
+                                <span class="menu-item__tag">Crafted Mocktails</span>
+                            </div>
+                        </div>
+                        <div class="menu-item__image">
+                            <img src="https://images.unsplash.com/photo-1546171753-97d7676e4602?w=300&q=80" alt="Mocktail">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <img src="images/hero-banner.webp" alt="EMBER & SAGE restaurant background" class="cta-section__bg">
+        <div class="container cta-section__content">
+            <h2>Ready to Dine with Us?</h2>
+            <p>Reserve your table and experience the EMBER & SAGE difference.</p>
+            <a href="reservations.html" class="btn btn--primary btn--lg">Reserve a Table</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <p class="footer__logo">EMBER <span>&</span> SAGE</p>
+                    <p class="footer__description">A contemporary restaurant focused on beautifully presented food, warm hospitality, and a refined dining experience.</p>
+                    <div class="footer__social">
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer__title">Quick Links</h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="reservations.html">Reservations</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="footer__title">Hours</h4>
+                    <div class="footer__hours">
+                        <p><strong>Mon - Thu:</strong> 5:00 PM - 10:00 PM</p>
+                        <p><strong>Fri - Sat:</strong> 5:00 PM - 11:00 PM</p>
+                        <p><strong>Sunday:</strong> 10:00 AM - 9:00 PM</p>
+                        <p style="margin-top: var(--space-4);"><strong>Brunch:</strong></p>
+                        <p>Sat & Sun: 10:00 AM - 2:00 PM</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="footer__title">Contact</h4>
+                    <div class="footer__hours">
+                        <p>127 Ember Lane</p>
+                        <p>Portland, OR 97201</p>
+                        <p style="margin-top: var(--space-4);">(503) 555-0142</p>
+                        <p>hello@emberandsage.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2026 EMBER & SAGE. All rights reserved.</p>
+                <div class="footer__bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
