@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <circle cx="256" cy="256" r="256" fill="#C4704B"/>
+  <!-- Knife -->
+  <g transform="translate(256,256) rotate(45)">
+    <rect x="-7" y="-140" width="14" height="220" rx="7" fill="white"/>
+    <rect x="-5" y="-140" width="10" height="40" rx="2" fill="white"/>
+  </g>
+  <!-- Fork -->
+  <g transform="translate(256,256) rotate(-45)">
+    <rect x="-7" y="-30" width="14" height="120" rx="7" fill="white"/>
+    <rect x="-20" y="-140" width="8" height="110" rx="4" fill="white"/>
+    <rect x="-4" y="-140" width="8" height="110" rx="4" fill="white"/>
+    <rect x="12" y="-140" width="8" height="110" rx="4" fill="white"/>
+  </g>
+  <!-- Flame -->
+  <g transform="translate(256,360)">
+    <path d="M0,10 Q-18,-5 -15,-25 Q-8,-15 0,-20 Q8,-15 15,-25 Q18,-5 0,10Z" fill="#E8A060" opacity="0.9"/>
+    <path d="M0,5 Q-10,-5 -8,-18 Q-4,-10 0,-14 Q4,-10 8,-18 Q10,-5 0,5Z" fill="#D4845F"/>
+  </g>
+</svg>
