@@ -5,8 +5,48 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Reserve your table at EMBER & SAGE. Experience contemporary dining with a reservation that suits your schedule.">
     <title>Reservations | EMBER & SAGE</title>
+    <link rel="canonical" href="https://emberandsage.com/reservations">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Reservations | EMBER & SAGE">
+    <meta property="og:description" content="Experience contemporary dining with a reservation that suits your schedule.">
+    <meta property="og:url" content="https://emberandsage.com/reservations">
+    <meta property="og:image" content="https://emberandsage.com/images/hero-banner.webp">
+    <meta property="og:site_name" content="EMBER & SAGE">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Reservations | EMBER & SAGE">
+    <meta name="twitter:description" content="Experience contemporary dining with a reservation that suits your schedule.">
+    <meta name="twitter:image" content="https://emberandsage.com/images/hero-banner.webp">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FoodEstablishmentReservation",
+      "name": "EMBER & SAGE Reservation",
+      "url": "https://emberandsage.com/reservations",
+      "reservationFor": {
+        "@type": "FoodEstablishment",
+        "name": "EMBER & SAGE",
+        "telephone": "+1-503-555-0142",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "127 Ember Lane",
+          "addressLocality": "Portland",
+          "addressRegion": "OR",
+          "postalCode": "97201",
+          "addressCountry": "US"
+        }
+      },
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://emberandsage.com/reservations"
+        }
+      }
+    }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -31,7 +71,9 @@
 
     <!-- Reservations Hero -->
     <section class="menu-hero">
-        <div class="container">
+        <img src="images/hero-banner.webp" alt="EMBER & SAGE dining ambiance" class="menu-hero__bg">
+        <div class="hero__overlay"></div>
+        <div class="container menu-hero__content" style="position:relative;z-index:1;">
             <h1>Reserve a Table</h1>
             <p>Join us for an unforgettable dining experience. Book your table today and let us take care of the rest.</p>
         </div>

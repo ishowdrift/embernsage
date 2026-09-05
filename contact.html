@@ -5,8 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Get in touch with EMBER & SAGE. Find our location, hours, and contact information. We'd love to hear from you.">
     <title>Contact | EMBER & SAGE</title>
+    <link rel="canonical" href="https://emberandsage.com/contact">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contact | EMBER & SAGE">
+    <meta property="og:description" content="Find our location, hours, and contact information. We'd love to hear from you.">
+    <meta property="og:url" content="https://emberandsage.com/contact">
+    <meta property="og:image" content="https://emberandsage.com/images/hero-banner-about.jpg">
+    <meta property="og:site_name" content="EMBER & SAGE">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact | EMBER & SAGE">
+    <meta name="twitter:description" content="Find our location, hours, and contact information. We'd love to hear from you.">
+    <meta name="twitter:image" content="https://emberandsage.com/images/hero-banner-about.jpg">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact EMBER & SAGE",
+      "url": "https://emberandsage.com/contact",
+      "mainEntity": {
+        "@type": "Restaurant",
+        "name": "EMBER & SAGE",
+        "telephone": "+1-503-555-0142",
+        "email": "hello@emberandsage.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "127 Ember Lane",
+          "addressLocality": "Portland",
+          "addressRegion": "OR",
+          "postalCode": "97201",
+          "addressCountry": "US"
+        }
+      }
+    }
+    </script>
     <style>
         .gallery-hero {
             position: relative;
@@ -206,17 +240,16 @@
             
             <!-- Map -->
             <div class="map-container fade-in" style="margin-top: var(--space-16);">
-                <div class="map-placeholder">
-                    <div style="text-align: center;">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="margin-bottom: var(--space-4);">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                            <circle cx="12" cy="10" r="3"/>
-                        </svg>
-                        <h3 style="color: var(--color-ivory); margin-bottom: var(--space-2);">127 Ember Lane</h3>
-                        <p style="color: var(--color-cream);">Portland, OR 97201</p>
-                        <a href="https://maps.google.com" target="_blank" rel="noopener" class="btn btn--secondary" style="margin-top: var(--space-4);">Open in Google Maps</a>
-                    </div>
-                </div>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.8!2d-122.6784!3d45.5231!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDMxJzIzLjEiTiAxMjLCsDQwJzQyLjIiVw!5e0!3m2!1sen!2sus!4v1"
+                    width="100%" 
+                    height="450" 
+                    style="border:0; border-radius: var(--radius-lg);" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="EMBER & SAGE location">
+                </iframe>
             </div>
         </div>
     </section>

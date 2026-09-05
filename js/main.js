@@ -207,10 +207,12 @@ const Carousel = {
 const MenuFilter = {
     buttons: null,
     items: null,
+    sections: null,
     
     init() {
         this.buttons = document.querySelectorAll('.menu-category-btn');
         this.items = document.querySelectorAll('.menu-item');
+        this.sections = document.querySelectorAll('.menu-section');
         
         if (this.buttons.length === 0 || this.items.length === 0) return;
         
@@ -228,20 +230,18 @@ const MenuFilter = {
     },
     
     filter(category) {
-        this.items.forEach(item => {
-            const itemCategory = item.dataset.category;
+        this.sections.forEach(section => {
+            const sectionId = section.id;
             
-            if (category === 'all' || itemCategory === category) {
-                item.style.display = 'grid';
+            if (category === 'all' || sectionId === category) {
+                section.style.display = 'block';
                 setTimeout(() => {
-                    item.style.opacity = '1';
-                    item.style.transform = 'translateY(0)';
+                    section.style.opacity = '1';
                 }, 50);
             } else {
-                item.style.opacity = '0';
-                item.style.transform = 'translateY(20px)';
+                section.style.opacity = '0';
                 setTimeout(() => {
-                    item.style.display = 'none';
+                    section.style.display = 'none';
                 }, 300);
             }
         });

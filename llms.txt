@@ -1,0 +1,48 @@
+# EMBER & SAGE
+
+> EMBER & SAGE is a contemporary restaurant in Portland, OR, focused on beautifully presented food, warm hospitality, and a refined dining experience. Founded in 2018 by Chef Marcus Bellini.
+
+## About
+
+A contemporary restaurant where fire meets flavor. Every dish tells a story of passion, precision, and the finest ingredients. Our name reflects the dual elements that define our cooking — the primal warmth of fire and the refined elegance of fresh herbs.
+
+## Chef
+
+Chef Marcus Bellini — Executive Chef & Co-Founder. With over two decades of experience in Michelin-starred kitchens across Europe and North America. Born in Milan, trained in Paris, with stints in New York and Tokyo.
+
+## Location
+
+127 Ember Lane, Portland, OR 97201
+Phone: (503) 555-0142
+Email: hello@emberandsage.com
+
+## Hours
+
+- Mon-Thu: 5:00 PM - 10:00 PM
+- Fri-Sat: 5:00 PM - 11:00 PM
+- Sunday: 10:00 AM - 9:00 PM
+- Brunch (Sat & Sun): 10:00 AM - 2:00 PM
+
+## Menu Highlights
+
+- Starters & Salads
+- Soups & Salads
+- Main Courses
+- Chef's Specials
+- Desserts
+- Drinks
+
+## Signature Dishes
+
+- Seared Duck Breast — $42
+- Ocean Kissed Salmon — $38
+- Ember-Kissed Wagyu — $68
+- Dark Chocolate Fondant — $18
+
+## Links
+
+- [Menu](https://emberandsage.com/menu)
+- [About](https://emberandsage.com/about)
+- [Gallery](https://emberandsage.com/gallery)
+- [Reservations](https://emberandsage.com/reservations)
+- [Contact](https://emberandsage.com/contact)
